@@ -1,0 +1,109 @@
+# 依赖
+node_modules/
+docs/node_modules/
+
+# 构建输出
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+dist/
+
+# 日志文件
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# 运行时数据
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# 环境变量
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 操作系统
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# 临时文件
+*.tmp
+*.temp
+copy_image.py
+fix_image.bat
+
+# 美团数据处理工具特定忽略
+# 输出文件
+*.xlsx
+*.log
+images/
+output/
+
+# 大文件资源
+*.ttf
+*.woff
+*.woff2
+
+# 数据文件
+liansuoshuju.txt
+malatang.txt
+*.json
+*.csv
+
+# 打包配置文件
+*.spec
+
+# 批处理文件
+*.bat
+*.cmd
+
+# 文档文件（只保留README.md）
+修复版使用说明.md
+项目结构说明.md
+
+# 测试和诊断文件
+test_*.py
+*_test.py
+diagnose_*.py
+fixed_*.py
+
+# 其他
+*.zip
+*.rar
+*.7z
