@@ -445,27 +445,30 @@ class MalatangProcessor:
         self.excel_manager = ExcelManager(self.logger)
         self.image_downloader = ImageDownloader(self.logger)
     
-    def process_file(self):
+    def process_file(self, input_file=None):
         """处理文件"""
-        self.logger.info("开始处理麻辣烫数据...")
-        
+        # 使用传入的文件路径，如果没有则使用配置文件中的默认路径
+        file_path = input_file or Config.INPUT_FILE
+
+        self.logger.info(f"开始处理数据文件: {file_path}")
+
         # 解析JSON数据
-        data = self.data_extractor.parse_json_file(Config.INPUT_FILE)
+        data = self.data_extractor.parse_json_file(file_path)
         if not data:
             return
-        
+
         # 提取商品信息
         products = self.data_extractor.extract_products(data)
         if not products:
             self.logger.warning("没有提取到商品信息")
             return
-        
+
         # 保存到Excel
         self.excel_manager.save_products_to_excel(products, Config.OUTPUT_EXCEL)
-        
+
         # 下载图片
         self.image_downloader.download_images(products, Config.IMAGES_DIR)
-        
+
         self.logger.info("数据处理完成")
     
     def start_monitoring(self):

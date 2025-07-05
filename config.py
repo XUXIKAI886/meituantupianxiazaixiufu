@@ -6,10 +6,19 @@
 """
 
 # 文件路径配置
-INPUT_FILE = "D:/ailun/liansuoshuju.txt"       # 输入的JSON数据文件
+INPUT_FILE = "D:/ailun/liansuoshuju.txt"       # 输入的JSON数据文件（默认）
 OUTPUT_EXCEL = "malatang_products.xlsx"        # 输出的Excel文件
 IMAGES_DIR = "images"                          # 图片保存目录
 LOG_FILE = "malatang_processor.log"            # 日志文件
+
+# 预设数据文件路径配置
+PRESET_FILES = {
+    "获取连锁图片": "D:/ailun/liansuoshuju.txt",
+    "获取小叮当图片": "D:/ailun/xiaodingdangshuju.txt"
+}
+
+# 默认选择的预设选项
+DEFAULT_PRESET = "获取连锁图片"
 
 # 网络请求配置
 REQUEST_TIMEOUT = 30                           # 请求超时时间（秒）
